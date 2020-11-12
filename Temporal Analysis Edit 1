@@ -1,0 +1,115 @@
+# install necessary packages from R
+install.packages('overlap')
+install.packages('lubridate')
+install.packages('tidyverse')
+#call in the necessary libraries needed for this R session 
+library(overlap)
+library(lubridate)
+library(mgcv)
+library(plyr)
+library(dplyr)
+
+#set working directory to the folder with the metadata csv file
+setwd("~/Desktop/thesis")
+
+#read in the data 
+data.p <- read.csv("formatted_wildcamdata_auset.csv")
+
+#I'm going to organize this by year. I will start with Late Dry 2016 and do the temporal analysis 
+#for all 3 species! Then I will continue through 2019 
+#Baboons
+baboon.2016 <- data.p[data.p$season_year == "Late Dry 2016" &
+                       data.p$Species == "Baboon",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_baboon.2016<- baboon.2016$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_baboon.2016, rug=TRUE, main ="Baboon Activity in the Late Dry Season 2016")
+
+#Civets
+civet.2016 <- data.p[data.p$season_year == "Late Dry 2016" &
+                        data.p$Species == "Civet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_civet.2016<- civet.2016$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_civet.2016, rug=TRUE, main ="Civet Activity in the Late Dry Season 2016")
+
+#Genet
+genet.2016 <- data.p[data.p$season_year == "Late Dry 2016" &
+                        data.p$Species == "Genet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_genet.2016<- genet.2016$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_genet.2016, rug=TRUE, main ="Genet Activity in the Late Dry Season 2016")
+
+############################################################################################
+#temporal analysis for 2017
+#Baboons
+baboon.2017 <- data.p[data.p$season_year == "Late Dry 2017" &
+                        data.p$Species == "Baboon",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_baboon.2017<- baboon.2017$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_baboon.2017, rug=TRUE, main ="Baboon Activity in the Late Dry Season 2017")
+
+#Civets
+civet.2017 <- data.p[data.p$season_year == "Late Dry 2017" &
+                       data.p$Species == "Civet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_civet.2017<- civet.2017$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_civet.2017, rug=TRUE, main ="Civet Activity in the Late Dry Season 2017")
+
+#Genet
+genet.2017 <- data.p[data.p$season_year == "Late Dry 2017" &
+                       data.p$Species == "Genet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_genet.2017<- genet.2017$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_genet.2017, rug=TRUE, main ="Genet Activity in the Late Dry Season 2017")
+
+#temporal analysis for 2018
+#Baboons
+baboon.2018 <- data.p[data.p$season_year == "Late Dry 2018" &
+                        data.p$Species == "Baboon",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_baboon.2018<- baboon.2018$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_baboon.2018, rug=TRUE, main ="Baboon Activity in the Late Dry Season 2018")
+
+#Civets
+civet.2018 <- data.p[data.p$season_year == "Late Dry 2018" &
+                       data.p$Species == "Civet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_civet.2018<- civet.2018$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_civet.2018, rug=TRUE, main ="Civet Activity in the Late Dry Season 2018")
+
+#Genet
+genet.2018 <- data.p[data.p$season_year == "Late Dry 2018" &
+                       data.p$Species == "Genet",]
+
+#pick the Time Radians column to use in the temporal activity plot
+plot_genet.2018<- genet.2018$Time.Radians
+
+#plot the temporal activity of baboons in the early dry season pre wild dog release
+densityPlot(plot_genet.2018, rug=TRUE, main ="Genet Activity in the Late Dry Season 2018")
+
+#temporal analysis for 2019
+#I do not have Late Dry 2019 data in my wildcam formatted data. Once I get it I can quickly
+#do the Late Dry 2019 analysis
